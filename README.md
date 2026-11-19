@@ -1,170 +1,164 @@
-# Instagram Posts – Flutter
+# Instagram Flutter App
 
 A modern Instagram-inspired social media application built with **Flutter** and **Dart**, integrated with a custom **FastAPI REST API**.
 
-This project started as a simple posts application and has grown into a more complete social media UI. It focuses on Flutter app architecture, API integration, authentication, navigation, and managing posts and comments.
+The application brings together authentication, a personalized feed, user discovery, profile pages, and post management in a dark-themed mobile interface.
 
-## 📱 Screenshots
+## Screenshots
 
-### Posts Feed
-![Posts Feed](screenshots/posts-feed.png)
+### Sign In
+![Sign In](screenshots/sign_in_page.png)
 
-### Add Post
-![Add Post](screenshots/add-post.png)
+### Home Feed
+![Home Feed](screenshots/feed_page.png)
 
-### Update Post
-![Update Post](screenshots/update-post.png)
+### Discover
+![Discover](screenshots/discover_page.png)
 
-## ✨ Features
+### Create a Post
+![Create Post](screenshots/add_post_page.png)
 
-- **Authentication:** Sign in and manage an authenticated user session.
-- **Home Feed:** Fetch and browse posts from the backend.
-- **Explore:** Browse available posts in the explore section.
-- **Post Details:** Open individual posts and view their details.
-- **Create Posts:** Create posts using an image URL and caption.
-- **Edit Posts:** Update existing post captions.
-- **Delete Posts:** Remove posts.
-- **Comments:** View and interact with post comments.
-- **User Profiles:** View user profile information and posts.
-- **Pull to Refresh:** Refresh feed content.
-- **Navigation:** Navigate between the main application sections.
-- **API Integration:** Communicate with the FastAPI backend using HTTP requests.
-- **Session Management:** Maintain authentication information across app usage.
+### User Profile
+![User Profile](screenshots/profile_page.png)
 
-## 🛠️ Tech Stack
+## Features
+
+### Authentication
+- Sign-in interface.
+- User registration interface.
+- Authenticated API requests.
+
+### Home Feed
+- Browse posts from users.
+- Display post images and captions.
+- Navigate through the application.
+
+### Discover
+- Browse available users.
+- Search for people by username.
+- Open user profiles.
+
+### Post Management
+- Create posts using image URLs.
+- Add captions to posts.
+- Edit existing posts.
+- Delete posts.
+- View posts in the feed and on profiles.
+
+### User Profiles
+- View user information.
+- Display profile details and bio.
+- View user posts.
+- Edit profile information.
+
+### UI and Navigation
+- Dark-themed interface.
+- Bottom navigation.
+- Dedicated screens for the feed, discover, creating posts, and profiles.
+- Consistent visual styling.
+
+## Technologies
 
 | Technology | Purpose |
 |---|---|
-| Flutter | Cross-platform UI development |
-| Dart | Application programming language |
+| Flutter | Cross-platform UI framework |
+| Dart | Programming language |
 | FastAPI | Backend REST API |
-| HTTP | API communication |
-| JSON | Data exchange and serialization |
-| Shared Preferences | Local session data storage |
-| File Picker | File selection dependency |
+| Python | Backend programming language |
+| SQLAlchemy | Database ORM |
+| SQLite | Database |
+| JWT | Authentication |
 
-## 📂 Project Structure
+## Related Backend
 
-```text
-lib/
-├── api/
-│   ├── config.dart
-│   ├── dart_api.dart
-│   └── session.dart
-│
-├── models/
-│   ├── post_model.dart
-│   └── user_model.dart
-│
-├── screens/
-│   ├── add_post.dart
-│   ├── auth_screen.dart
-│   ├── explore_screen.dart
-│   ├── feed_screen.dart
-│   ├── main_shell.dart
-│   ├── post_detail_screen.dart
-│   ├── profile_screen.dart
-│   └── update_post.dart
-│
-├── theme/
-│   └── app_theme.dart
-│
-├── utils/
-│   └── format.dart
-│
-├── widgets/
-│   ├── avatar.dart
-│   ├── brand.dart
-│   ├── comments_panel.dart
-│   ├── post_card.dart
-│   └── state_views.dart
-│
-└── main.dart
-```
+This application connects to a separate FastAPI backend:
 
-## 🔗 Backend Integration
+**[FastAPI Instagram API](https://github.com/ARK13-org/FastAPI-Instagram-API)**
 
-This application connects to a separate FastAPI backend.
+The backend provides functionality for:
+- User accounts and authentication.
+- Post creation and management.
+- Comment management.
+- Image uploads.
+- User profiles.
 
-**Backend Repository:**  
-[FastAPI-Instagram-API](https://github.com/ARK13-org/FastAPI-Instagram-API)
+## Getting Started
 
-The backend provides REST API functionality for authentication, users, posts, and comments.
-
-The API base address is configured in:
-
-```text
-lib/api/config.dart
-```
-
-Make sure the backend is running and accessible before using the application.
-
-## ⚙️ Installation and Setup
-
-### 1. Clone the Repository
+### 1. Clone the repository
 
 ```bash
-git clone https://github.com/ARK13-org/Instagram-Posts-Flutter.git
+git clone https://github.com/ARK13-org/Instagram-Flutter-App.git
+
+cd Instagram-Flutter-App
 ```
 
-### 2. Navigate to the Project
-
-```bash
-cd Instagram-Posts-Flutter
-```
-
-### 3. Install Dependencies
+### 2. Install dependencies
 
 ```bash
 flutter pub get
 ```
 
-### 4. Configure the Backend
+### 3. Configure the backend connection
 
-Open:
+Make sure the FastAPI backend is running.
+
+Configure the API base URL in the Flutter application to point to your backend.
+
+For Android emulator development, use:
 
 ```text
-lib/api/config.dart
+http://10.0.2.2:8000
 ```
 
-Set the API address according to your environment.
+For physical-device testing, use your computer's local network IP address.
 
-Common examples:
-
-- **Android Emulator:** `10.0.2.2` to access the host computer.
-- **Physical Android Device:** Your computer's local network IP address.
-- **Web/Desktop:** An address accessible from your environment.
-
-Ensure the backend URL and port match your FastAPI configuration.
-
-### 5. Run the Application
+### 4. Run the application
 
 ```bash
 flutter run
 ```
 
-## 📚 What I Learned
+## Project Structure
+
+```text
+Instagram-Flutter-App/
+│
+├── lib/
+│   ├── api/
+│   ├── models/
+│   ├── screens/
+│   ├── widgets/
+│   └── main.dart
+│
+├── assets/
+├── screenshots/
+├── test/
+├── pubspec.yaml
+└── README.md
+```
+
+*The structure above illustrates the main application areas; actual folders may vary.*
+
+## Related Project
+
+The backend and Flutter application are maintained in separate repositories:
+
+- **Frontend:** [Instagram-Flutter-App](https://github.com/ARK13-org/Instagram-Flutter-App)
+- **Backend:** [FastAPI-Instagram-API](https://github.com/ARK13-org/FastAPI-Instagram-API)
+
+## What I Learned
 
 Through this project, I practiced:
 
 - Building multi-screen Flutter applications.
-- Organizing Flutter projects into reusable components.
-- Managing application state and navigation.
-- Creating and using Dart model classes.
-- Parsing JSON responses.
-- Integrating Flutter with a FastAPI backend.
-- Sending HTTP requests and handling API responses.
-- Implementing authentication and session management.
-- Working with asynchronous operations.
-- Building reusable widgets and application themes.
-- Managing data across different screens.
+- Managing application navigation.
+- Connecting Flutter to REST APIs.
+- Handling authentication and JWT tokens.
+- Working with JSON responses and API models.
+- Implementing post management.
+- Building user discovery and profile interfaces.
+- Integrating a Flutter frontend with a FastAPI backend.
 
-## 🎯 Project Goal
+## Project Goal
 
-The goal of this project is to improve my Flutter and Dart development skills by building a practical social media application and integrating it with a custom backend.
-
-It is part of my ongoing portfolio development, combining **Flutter frontend development** with **Python and FastAPI backend development**.
-
----
-
-**Developer:** [ARK13-org](https://github.com/ARK13-org)
+The goal of this project is to build an Instagram-inspired mobile application while improving my Flutter development skills and gaining practical experience integrating a mobile frontend with a custom backend.
